@@ -1,0 +1,40 @@
+﻿
+<div  class="container pt-5" ng-controller="MoviesListController">
+    <div class="row filterwrap mb-4">
+        <div class="col-lg-4 col-12">
+            <label for="search">Search series: </label>
+            <input type="text" id="search" class="form-control" ng-model="searchText" />
+        </div>
+        <div class="col-lg-4 col-12">
+            <label>Order by: </label>
+            <select ng-model="sortBy" class="browser-default custom-select">
+                <option value="None">-- Select --</option>
+                <option value="Title">Title</option>
+                <option value="Views">Views</option>
+                <option value="Season">Season</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="moviesWrap" data-ng-repeat="item in moviesData| filter:searchText  | orderBy:sortBy">
+        <a href="#!/movieDetails/{{item.ID}}">
+            <div class="row">
+                <div class="col-md-2 col-4 mx-auto mb-4">
+                    <img alt="{{item.Title}}" ng-src="/Images/{{item.Image}}" />
+                </div>
+                <div class="col-md-10 col-8">
+                  
+                        <h1>{{item.Title}}</h1>
+                    
+                        <div>  <label for="search">Seasons: </label> {{item.Season}}</div>
+                        <div>
+                            <label for="search">Views: </label>{{item.Views}}
+                        </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+

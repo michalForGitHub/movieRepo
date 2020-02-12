@@ -1,0 +1,43 @@
+﻿@color-base: black;
+@title-color:blue;
+@width-base: 100%;
+@image-round-border: 25px;
+@general-none: none ;
+@image-height: 150px;
+@padding-size: 30px;
+@baseFontSize: 20;
+@border-base: 1px solid;
+@bold-text:bold;
+
+.font-size(@font-size: @baseFontSize) {
+    @rem: (@font-size / @baseFontSize);
+    font-size: @font-size * 1px;
+    font-size: ~"@{rem}rem";
+}
+.filterwrap,.moviesWrap {
+    .font-size(30);
+}
+label{
+font-weight:@bold-text;
+}
+img {
+    border-radius: @image-round-border;
+    border: @border-base @color-base;
+   
+    width: @width-base;
+    height: @image-height;
+}
+.moviesWrap {
+    color: @color-base;
+    a:hover, a:visited, a:link, a:active, a {
+        text-decoration: @general-none;
+        color: @color-base;
+    }
+    h1{
+        /*padding-bottom:@padding-size;*/
+        color:@title-color;
+    }
+}
+
+     
+
